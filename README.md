@@ -19,5 +19,5 @@ Are you craving Chinese food? We've got the place for you, Brothers' hotPot is t
 
 
 ## Design 
-![This is an rough design of the rewards page](<Screenshot 2024-09-12 141819.png> | width = 100)
+![This is an rough design of the rewards page](<Screenshot 2024-09-12 141819.png | width=100>)
 
