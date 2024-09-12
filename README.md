@@ -30,5 +30,5 @@ I am going to use the required technologies in the following ways.
 - **Database data** - Stores login info, menu items and prices
 - **WebSocket data** - Data depicting the amount of times eadch menu item is viewed. As each user leaves a review, other users will see it.
 
-## Design 
+## Design :pencil2:
 ![Pictures of all four designs for the different pages](image.png)
