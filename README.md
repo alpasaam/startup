@@ -16,3 +16,7 @@ Are you craving Chinese food? We've got the place for you, Brothers' hotPot is t
 - Interactive photo/video gallery
 - Ability for admin to edit food items, prices & pictures
 - Rewards program that stores users' reward points
+
+
+## Design 
+![This is an rough design of the rewards page](<Screenshot 2024-09-12 141819.png>)
