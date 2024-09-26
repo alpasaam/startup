@@ -9,4 +9,5 @@ ssh -i '.\Documents\BYU 2024-2025\BYU Fall 2024\CS260\Y1ChangT!ng.pem' ubuntu@54
 
 http://54.156.160.185/
 
-this is a test
+
+this is Saam
