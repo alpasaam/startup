@@ -22,7 +22,26 @@
 
 
     <main>
-        <p>This is a simple home page with red and black as the main colors.</p>
+        <section>
+            <form action="login_process.php" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <br><br>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br><br>
+                
+                <input type="submit" value="Login">
+            </form>
+        </section>
+        
+        <footer>
+            <p>Don't have an account? <a href="register.html">Register here</a></p>
+        </footer>
+        
+        </body>
+        </html>
     </main>
 
 
