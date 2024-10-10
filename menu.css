@@ -35,3 +35,52 @@ a {
 a:hover {
     color: #0056b3; /* Darker link color on hover */
 }
+
+/* Add styles for buttons */
+button {
+    background-color: #007bff; /* Bootstrap primary button color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker button color on hover */
+}
+
+/* Add styles for form inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Add styles for form labels */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Add styles for navigation links */
+nav a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: #000;
+    border-radius: 5px;
+}
