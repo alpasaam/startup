@@ -58,3 +58,8 @@ a:hover {
 .weekly-offers p {
     margin: 10px 0;
 }
+.divider {
+    height: 2px;
+    background-color: #343a40; /* Dark color for the divider */
+    margin: 10px 0; /* Spacing above and below the divider */
+}
