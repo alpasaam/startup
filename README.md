@@ -29,6 +29,16 @@ I am going to use the required technologies in the following ways.
 - **Authentication** - Authentication for login.
 - **Database data** - Stores login info, menu items and prices
 - **WebSocket data** - Data depicting the amount of times eadch menu item is viewed. As each user leaves a review, other users will see it.
+  
+## HTML deliverable
 
+For this deliverable I built out the structure of my application using HTML.
+
+- [x] **HTML pages** - Five HTML page that represent the ability to login, view menu, register an account, see the "about us" and rewards program.
+- [x] **Links** - The login page links to the register page. Every page links to every other page. 
+- [x] **Text** - Reviews are displayed on the home page. 
+- [x] **Images** - Included images for the menu and home page.
+- [x] **DB/Login** - Input box and submit button for login. The username and password date will be pulled from a database
+- [x] **WebSocket** - The amount of points each user has will be pulled from a Websocket. 
 ## Design :pencil2:
 ![Pictures of all four designs for the different pages](image.png)
