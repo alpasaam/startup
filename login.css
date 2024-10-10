@@ -1,12 +1,18 @@
+header {
+    font-family: 'Noto Sans SC', sans-serif;
+    color: #DA0037;
+    background-color: rgb(68, 68, 68);
+    padding: 10px;
+}
 body {
-    background-color: black;
+    background-color: #DA0037;
     color: white;
 }
 nav {
-    background-color: #343a40;
+    background-color: rgb(237, 237, 237);
 }
 .form-container {
-    background-color: #212529;
+    background-color: rgb(23, 23, 23);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
