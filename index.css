@@ -4,10 +4,25 @@ header {
     background-color: rgb(68, 68, 68);
     padding: 10px;
 }
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
 body {
     background-color: #DA0037;
     color: white;
+    text-align: center;
+    ul {
+        list-style-position: inside;
+        padding-left: 0;
+        display: inline-block;
+        text-align: left;
+    }
 }
+
 nav {
     background-color: rgb(237, 237, 237);
 }
@@ -20,12 +35,19 @@ nav {
     display: inline-block;
 }
 
-.form-container {
-    background-color: rgb(23, 23, 23);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+.about img {
+    width: 300%; /* Make the image take the full width of its container */
+    height: auto; /* Maintain aspect ratio */
 }
+
+
+#reviews {
+    float: left;
+    padding: 20px;
+    width: 25%; /* Adjust width as needed */
+    box-sizing: border-box;
+}
+
 footer {
     margin-top: 20px;
 }
@@ -35,3 +57,6 @@ a {
 a:hover {
     color: #0056b3; /* Darker link color on hover */
 }
+
+
+
