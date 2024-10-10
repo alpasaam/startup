@@ -35,3 +35,26 @@ a {
 a:hover {
     color: #0056b3; /* Darker link color on hover */
 }
+.rewards-section {
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #000000;
+    color: rgb(237, 237, 237);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+.weekly-offers h2 {
+    margin-top: 20px;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: rgb(68, 68, 68);
+    color: rgb(237, 237, 237);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+}
+.weekly-offers p {
+    margin: 10px 0;
+}
