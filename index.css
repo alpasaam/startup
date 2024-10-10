@@ -55,24 +55,15 @@ nav {
     margin-right: auto;
 }
 
-#reviews {
-    padding: 100px;
-    width: 50%; /* Adjust width as needed */
-    box-sizing: border-box;
-
-    display: flex;
-    flex-wrap: wrap;    
-    justify-content: space-between;
-}
-
-.best-reviews {
-    flex: 1;
-    margin-right: 20px; /* Adjust spacing as needed */
+.reviews {
+    float: left;
+    width: 45%;
+    margin-right: 5%;
 }
 
 .leave-review {
-    flex: 1;
-    text-align: right;
+    float: right;
+    width: 45%;
 }
 
 footer {
