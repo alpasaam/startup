@@ -1,0 +1,22 @@
+body {
+    background-color: black;
+    color: white;
+}
+nav {
+    background-color: #343a40;
+}
+.form-container {
+    background-color: #212529;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+footer {
+    margin-top: 20px;
+}
+a {
+    color: #007bff; /* Bootstrap link color */
+}
+a:hover {
+    color: #0056b3; /* Darker link color on hover */
+}
