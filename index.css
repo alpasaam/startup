@@ -1,0 +1,37 @@
+header {
+    font-family: 'Noto Sans SC', sans-serif;
+    color: #DA0037;
+    background-color: rgb(68, 68, 68);
+    padding: 10px;
+}
+body {
+    background-color: #DA0037;
+    color: white;
+}
+nav {
+    background-color: rgb(237, 237, 237);
+}
+
+.navbar-brand {
+    background: url('logo.png') no-repeat center center;
+    background-size: contain;
+    width: 100px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    display: inline-block;
+}
+
+.form-container {
+    background-color: rgb(23, 23, 23);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+footer {
+    margin-top: 20px;
+}
+a {
+    color: #007bff; /* Bootstrap link color */
+}
+a:hover {
+    color: #0056b3; /* Darker link color on hover */
+}
