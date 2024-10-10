@@ -7,71 +7,68 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="rewards.css" />
     <title>Home Page</title>
 </head>
-<header class="text-center">
-    <h1>兄弟火锅 - Brothers HotPot</h1>
-</header>
-<nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="#"></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-            <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
-            <li class="nav-item"><a class="nav-link" href="rewards.html">Rewards</a></li>
-        </ul>
-    </div>
-</nav>
+<body>
+    <header class="text-center">
+        <h1>兄弟火锅 - Brothers HotPot</h1>
+    </header>
 
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="rewards.html">Rewards</a></li>
+            </ul>
+        </div>
+    </nav>
 
+    <main class="container">
+        <section class="rewards-section">
+            <h2>User 123 : Points</h2>
+            <p>You have <span id="points">0</span> points.</p>
+        </section>
 
-    <main>
+        <section class="weekly-offers">
+            <h2>Weekly Offers</h2>
+            <h3>Monday</h3>
+            <p>Buy one, get one free on all appetizers!</p>
+        
+            <h3>Tuesday</h3>
+            <p>20% off all potstickers.</p>
+        
+            <h3>Wednesday</h3>
+            <p>Kids eat free with the purchase of an adult meal.</p>
+        
+            <h3>Thursday</h3>
+            <p>Half-priced beef dishes all day!</p>
+        
+            <h3>Friday</h3>
+            <p>Rewards members earn free drinks all day!</p>
+        
+            <h3>Saturday</h3>
+            <p>25% off daily special!</p>
+        
+            <h3>Sunday</h3>
+            <p>Family meal deal: feed four for $40.</p>
+        </section>
+    </main>
 
-
-    <section></section>
-        <h2>User 123 :  Points</h2>
-        <p>You have <span id="points">0</span> points.</p>
-    </section>
+    <footer>
+        <p>&copy; 2024 Saam & Josh</p>
+        <p><a href="https://github.com/alpasaam/startup" style="color: white;">GitHub Repositories</a></p>
+    </footer>
 
     <script>
         // Example script to set points, replace with actual logic to fetch user points
         document.getElementById('points').textContent = 150; // Example points
     </script>
-
-
-        <section>
-            <h2>Monday</h2>
-            <p>Buy one, get one free on all appetizers!</p>
-        
-            <h2>Tuesday</h2>
-            <p>20% off all potstickers.</p>
-        
-            <h2>Wednesday</h2>
-            <p>Kids eat free with the purchase of an adult meal.</p>
-        
-            <h2>Thursday</h2>
-            <p>Half-priced beef dishes all day!</p>
-        
-            <h2>Friday</h2>
-            <p>Rewards members earn free drinks all day!</p>
-        
-            <h2>Saturday</h2>
-            <p>25% off daily special!</p>
-        
-            <h2>Sunday</h2>
-            <p>Family meal deal: feed four for $40.</p>
-        </section>
-    </main>
-
-    <hr />
-    <footer>
-        <p>&copy; 2024 Saam & Josh</p>
-        <p><a href="https://github.com/alpasaam/startup" style="color: white;">GitHub Repositories</a></p>
-    </footer>
 </body>
 </html>
