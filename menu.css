@@ -4,10 +4,12 @@ header {
     background-color: rgb(68, 68, 68);
     padding: 10px;
 }
+
 body {
     background-color: #DA0037;
     color: white;
 }
+
 nav {
     background-color: rgb(237, 237, 237);
 }
@@ -15,30 +17,60 @@ nav {
 .navbar-brand {
     background: url('logo.png') no-repeat center center;
     background-size: contain;
-    width: 100px; /* Adjust as needed */
-    height: 50px; /* Adjust as needed */
+    width: 100px;
+    /* Adjust as needed */
+    height: 50px;
+    /* Adjust as needed */
     display: inline-block;
 }
 
-.form-container {
+#menu {
+    border: 2px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.menu-item {
+    padding: 10px 15px;
+    margin: 5px 0;
+    background-color: rgb(23, 23, 23);
+    color: #ccc;
+    border-radius: 5px;
+    text-align: left;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-item:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+.form-contaOuiner {
     background-color: rgb(23, 23, 23);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
+
 footer {
     margin-top: 20px;
 }
+
 a {
-    color: #007bff; /* Bootstrap link color */
+    color: #007bff;
+    /* Bootstrap link color */
 }
+
 a:hover {
-    color: #0056b3; /* Darker link color on hover */
+    color: #0056b3;
+    /* Darker link color on hover */
 }
 
 /* Add styles for buttons */
 button {
-    background-color: #007bff; /* Bootstrap primary button color */
+    background-color: #007bff;
+    /* Bootstrap primary button color */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -48,7 +80,8 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3; /* Darker button color on hover */
+    background-color: #0056b3;
+    /* Darker button color on hover */
 }
 
 /* Add styles for form inputs */
