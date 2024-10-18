@@ -200,13 +200,35 @@ console.log(doubled);</code></pre>
         <li><code>nano</code>: Open Nano text editor.</li>
         <li><code>mkdir</code>: Create new directory.</li>
         <li><code>mv</code>: Move or rename files.</li>
-        <li><
+        <li><code>rm</code>: Remove files.</li>
+        <li><code>man</code>: Show manual for a command.</li>
+        <li><code>ssh</code>: Secure shell to a remote machine.</li>
+        <li><code>ps</code>: Display running processes.</li>
+        <li><code>wget</code>: Download files from the web.</li>
+        <li><code>sudo</code>: Execute command as superuser.</li>
+    </ul>
+</div>
 
+<div class="question">
+    <h2>What will the following code using Promises output when executed?</h2>
+    <pre><code>const myPromise = new Promise((resolve, reject) => {
+    const success = true;
+
+    if (success) {
+        resolve("Operation succeeded!");
+    } else {
+        reject("Operation failed.");
+    }
+});
 
 myPromise
     .then(result => {
-        console.log(result); // This runs if the promise is fulfilled
+        console.log(result); // If promise is fulfilled
     })
     .catch(error => {
-        console.error(error); // This runs if the promise is rejected
-    });
+        console.error(error); // If promise is rejected
+    });</code></pre>
+</div>
+
+</body>
+</html>
