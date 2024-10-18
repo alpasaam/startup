@@ -40,5 +40,20 @@ For this deliverable I built out the structure of my application using HTML.
 - [x] **Images** - Included images for the menu and home page.
 - [x] **DB/Login** - Input box and submit button for login. The username and password date will be pulled from a database
 - [x] **WebSocket** - The amount of points each user has will be pulled from a Websocket. 
+
+
+## CSS deliverable
+
+For this deliverable I properly styled the application into its final appearance.
+
+- [x] **Header, footer, and main content body**
+- [x] **Navigation elements** - We added the nav bar and pushed it to the right side of the page
+- [x] **Responsive to window resizing** - My app looks great on all window sizes and devices
+- [x] **Application elements** - Used good contrast and whitespace
+- [x] **Application text content** - Consistent fonts
+- [X] **Application images** - Images are styled to our liking, there will be more images added to the menu
+
+
+
 ## Design :pencil2:
 ![Pictures of all four designs for the different pages](image.png)
