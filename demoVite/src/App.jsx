@@ -1,9 +1,11 @@
 import React from 'react';
+import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
   return (
+    <BrowserRouter>
     <div>
       <header className="text-center">
         <h1>兄弟火锅 - Brothers HotPot</h1>
@@ -15,10 +17,10 @@ function App() {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item"><a className="nav-link" href="index.html">Home</a></li>
-            <li className="nav-item"><a className="nav-link" href="login.html">Login</a></li>
-            <li className="nav-item"><a className="nav-link" href="menu.html">Menu</a></li>
-            <li className="nav-item"><a className="nav-link" href="rewards.html">Rewards</a></li>
+            <li className="nav-item"><NavLink className="nav-link" to='home'>Home</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link" to='login'>Login</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link" to='menu'>Menu</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link" to='reward'>Rewards</NavLink></li>
           </ul>
         </div>
       </nav>
@@ -29,6 +31,7 @@ function App() {
         <p></p>
       </main>
     </div>
+    </BrowserRouter>
   );
 }
 
