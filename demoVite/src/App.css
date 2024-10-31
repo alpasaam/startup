@@ -1,80 +1,44 @@
+/* Header styles */
 header {
-  font-family: 'Noto Sans SC', sans-serif;
-  color: #DA0037;
-  background-color: rgb(68, 68, 68);
-  padding: 10px;
-}
-
-p {
-  font-size: 1.2em;
-  line-height: 1.6;
-  margin: 20px 0;
-}
-
-body {
-  background-color: #DA0037;
-  color: white;
   text-align: center;
-  ul {
-      list-style-position: inside;
-      padding-left: 0;
-      display: inline-block;
-      text-align: left;
-  }
+  margin-bottom: 20px;
 }
 
-nav {
-  background-color: rgb(237, 237, 237);
+/* Navbar styles */
+.navbar {
+  margin-bottom: 20px;
 }
 
 .navbar-brand {
-  background: url('logo.png') no-repeat center center;
-  background-size: contain;
-  width: 100px; /* Adjust as needed */
-  height: 50px; /* Adjust as needed */
-  display: inline-block;
+  font-size: 1.5rem;
 }
 
-.about img {
-  width: 300%; /* Make the image take the full width of its container */
-  height: auto; /* Maintain aspect ratio */
-}
-
-#about {
-  margin-top: 20px;
-  margin-top: 10px;
-  width: 100ch;
-  padding: 20px;
-  background-color: rgb(23, 23, 23);
-  color: rgb(237, 237, 237);
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.reviews {
-  float: left;
-  width: 45%;
-  margin-right: 5%;
-}
-
-.leave-review {
-  float: right;
-  width: 45%;
-}
-
-footer {
-  margin-top: 20px;
-}
-a {
+.navbar-nav .nav-item .nav-link {
   color: #007bff; /* Bootstrap link color */
 }
-a:hover {
+
+.navbar-nav .nav-item .nav-link:hover {
   color: #0056b3; /* Darker link color on hover */
 }
 
+/* Username display styles */
+.username-display {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+}
 
+/* Footer styles */
+footer {
+  margin-top: 20px;
+}
 
+/* General link styles */
+a {
+  color: #007bff; /* Bootstrap link color */
+}
+
+a:hover {
+  color: #0056b3; /* Darker link color on hover */
+}
