@@ -3,7 +3,7 @@ import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
 import { Home } from './home/home';
 import { Login } from './login/login';
 import { Menu } from './menu/menu';
-import { Rewards } from './menu/menu';
+import { Rewards } from './rewards/rewards';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './app.css';
 export default function App() {
