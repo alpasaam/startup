@@ -1,34 +1,7 @@
-/* General body styles */
-.body {
-  display: flex;
-  flex-direction: column;
-  min-width: 375px;
-}
-
 /* Header styles */
 header {
   text-align: center;
   margin-bottom: 20px;
-  padding-top: 70px; /* Adjust this value based on the height of your navbar */
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-/* Main content styles */
-main {
-  flex: 1 calc(100vh - 110px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-}
-
-/* Footer styles */
-footer {
-  flex: 0 30px;
 }
 
 /* Navbar styles */
@@ -36,18 +9,12 @@ footer {
   margin-bottom: 20px;
 }
 
-header {
-  text-align: center;
-  color :red;
-}
-
 .navbar-brand {
-  color: black;
-  text-align: center;
+  font-size: 1.5rem;
 }
 
 .navbar-nav .nav-item .nav-link {
-  color: grey; /* Bootstrap link color */
+  color: #007bff; /* Bootstrap link color */
 }
 
 .navbar-nav .nav-item .nav-link:hover {
@@ -59,27 +26,19 @@ header {
   position: absolute;
   top: 10px;
   right: 10px;
-  color: black;
+  color: white;
+}
+
+/* Footer styles */
+footer {
+  margin-top: 20px;
 }
 
 /* General link styles */
 a {
-  color: grey; /* Bootstrap link color */
+  color: #007bff; /* Bootstrap link color */
 }
 
 a:hover {
-  color: grey; /* Darker link color on hover */
-}
-
-/* Media query for small height screens */
-@media (max-height: 600px) {
-  header {
-    display: none;
-  }
-  footer {
-    display: none;
-  }
-  main {
-    flex: 1 100vh;
-  }
+  color: #0056b3; /* Darker link color on hover */
 }
