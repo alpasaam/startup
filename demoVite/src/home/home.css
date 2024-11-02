@@ -10,7 +10,7 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    padding: 10px 0;
+    padding: 125px 0;
     text-align: center;
 }
 
@@ -20,15 +20,14 @@ header h1 {
 }
 
 nav {
+    margin-top: 75px;
     background-color: #444;
     color: #fff;
-    padding: 10px;
-    text-align: center;
 }
 
 nav a {
     color: #fff;
-    margin: 0 10px;
+    margin: 0 15px;
     text-decoration: none;
 }
 
