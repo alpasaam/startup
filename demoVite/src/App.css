@@ -1,13 +1,23 @@
+/* General body styles */
 .body {
   display: flex;
   flex-direction: column;
   min-width: 375px;
 }
 
+/* Header styles */
 header {
-  flex: 0 80px;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-top: 70px; /* Adjust this value based on the height of your navbar */
 }
 
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+/* Main content styles */
 main {
   flex: 1 calc(100vh - 110px);
   display: flex;
@@ -16,31 +26,52 @@ main {
   justify-content: space-around;
 }
 
+/* Footer styles */
 footer {
   flex: 0 30px;
 }
 
-menu {
-  flex: 1;
-  display: flex;
-  /*  overwrite Bootstrap so the menu does not wrap */
-  flex-direction: row !important;
-  list-style: none;
+/* Navbar styles */
+.navbar {
+  margin-bottom: 20px;
+}
+
+header {
+  text-align: center;
+  color :red;
 }
 
 .navbar-brand {
-  padding-left: 0.3em;
-  border-bottom: solid rgb(182, 182, 182) thin;
+  color: black;
+  text-align: center;
 }
 
-menu .nav-item {
-  padding: 0 0.3em;
+.navbar-nav .nav-item .nav-link {
+  color: grey; /* Bootstrap link color */
 }
 
-footer a {
-  float: right;
+.navbar-nav .nav-item .nav-link:hover {
+  color: #0056b3; /* Darker link color on hover */
 }
 
+/* Username display styles */
+.username-display {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: black;
+}
+
+/* General link styles */
+a {
+  color: grey; /* Bootstrap link color */
+}
+
+a:hover {
+  color: grey; /* Darker link color on hover */
+}
+
+/* Media query for small height screens */
 @media (max-height: 600px) {
   header {
     display: none;

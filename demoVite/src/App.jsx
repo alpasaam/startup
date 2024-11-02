@@ -50,8 +50,8 @@ export default function App() {
 
       <footer className='bg-dark text-white-50'>
         <div className='container-fluid'>
-          <span className='text-reset'>Author Name(s)</span>
-          <a className='text-reset' href='https://github.com/webprogramming260/simon-react'>
+          <span className='text-reset'>2024 Saam and Josh(s)</span>
+          <a className='text-reset' href='https://github.com/alpasaam/startup'>
             Source
           </a>
         </div>
