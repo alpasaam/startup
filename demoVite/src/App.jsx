@@ -1,9 +1,13 @@
 import React from 'react';
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import { Home } from './login/login';
+import { Login } from './play/play';
+import { Menu } from './scores/scores';
+import { Rewards } from './about/about';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-function App() {
+export default function App() {
   return (
     <BrowserRouter>
     <div>
@@ -20,7 +24,7 @@ function App() {
             <li className="nav-item"><NavLink className="nav-link" to='home'>Home</NavLink></li>
             <li className="nav-item"><NavLink className="nav-link" to='login'>Login</NavLink></li>
             <li className="nav-item"><NavLink className="nav-link" to='menu'>Menu</NavLink></li>
-            <li className="nav-item"><NavLink className="nav-link" to='reward'>Rewards</NavLink></li>
+            <li className="nav-item"><NavLink className="nav-link" to='rewards'>Rewards</NavLink></li>
           </ul>
         </div>
       </nav>
@@ -34,5 +38,3 @@ function App() {
     </BrowserRouter>
   );
 }
-
-export default App;
