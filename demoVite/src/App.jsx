@@ -1,40 +1,66 @@
 import React from 'react';
 import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
-import { Home } from './login/login';
-import { Login } from './play/play';
-import { Menu } from './scores/scores';
-import { Rewards } from './about/about';
+import { Home } from './home/home';
+import { Login } from './login/login';
+import { Menu } from './menu/menu';
+import { Rewards } from './menu/menu';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-
+import './app.css';
 export default function App() {
   return (
     <BrowserRouter>
-    <div>
-      <header className="text-center">
-        <h1>兄弟火锅 - Brothers HotPot</h1>
+    <div className='body bg-dark text-light'>
+      <header className='container-fluid'>
+	<nav className='navbar fixed-top navbar-dark'>
+	  <div className='navbar-brand'>
+	    Simon<sup>&reg;</sup>
+	  </div>
+	  <menu className='navbar-nav'>
+	    <li className='nav-item'>
+	      <NavLink className='nav-link' to=''>
+		Home
+	      </NavLink>
+	    </li>
+	    <li className='nav-item'>
+	      <NavLink className='nav-link' to='login'>
+		Login
+	      </NavLink>
+	    </li>
+	    <li className='nav-item'>
+	      <NavLink className='nav-link' to='menu'>
+		Menu
+	      </NavLink>
+	    </li>
+	    <li className='nav-item'>
+	      <NavLink className='nav-link' to='rewards'>
+		Rewards
+	      </NavLink>
+	    </li>
+	  </menu>
+	</nav>
       </header>
-      <nav className="navbar navbar-expand-lg navbar-light">
-        <a className="navbar-brand" href="#"></a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ml-auto">
-            <li className="nav-item"><NavLink className="nav-link" to='home'>Home</NavLink></li>
-            <li className="nav-item"><NavLink className="nav-link" to='login'>Login</NavLink></li>
-            <li className="nav-item"><NavLink className="nav-link" to='menu'>Menu</NavLink></li>
-            <li className="nav-item"><NavLink className="nav-link" to='rewards'>Rewards</NavLink></li>
-          </ul>
+
+      <Routes>
+	<Route path='/' element={<Home />} exact />
+	<Route path='/login' element={<Login />} />
+	<Route path='/menu' element={<Menu />} />
+	<Route path='/rewards' element={<Rewards />} />
+	<Route path='*' element={<NotFound />} />
+      </Routes>
+
+      <footer className='bg-dark text-white-50'>
+        <div className='container-fluid'>
+          <span className='text-reset'>Author Name(s)</span>
+          <a className='text-reset' href='https://github.com/webprogramming260/simon-react'>
+            Source
+          </a>
         </div>
-      </nav>
-      <div style={{ position: 'absolute', top: '10px', right: '10px', color: 'white' }}>
-        <p>Username: <span id="username">User123</span></p>
-      </div>
-      <main>
-        <p></p>
-      </main>
+      </footer>
     </div>
     </BrowserRouter>
   );
+}
+
+function NotFound() {
+  return <main className='container-fluid bg-secondary text-center'>404: Return to sender. Address unknown.</main>;
 }
