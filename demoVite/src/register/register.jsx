@@ -1,17 +1,35 @@
 import React, { useState } from 'react';
-import { useAuth } from '../login/AuthContext';
+import { useNavigate } from 'react-router-dom';
 import './register.css';
 
 export function Register() {
-  const { register } = useAuth();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+  const navigate = useNavigate();
 
-  const handleRegister = (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
     // Perform register logic here
-    register(username, password, email); // Update the authentication state with username, password, and email
+    const response = await fetch('/api/auth/create', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username, password, email }),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      // Handle successful registration (e.g., store token, redirect to login or rewards page)
+      console.log('Registration successful:', data);
+      navigate('/login'); // Redirect to the login page
+    } else {
+      // Handle registration error
+      const errorData = await response.json();
+      console.error('Registration failed:', errorData);
+      alert('Registration failed. Please try again.');
+    }
   };
 
   return (

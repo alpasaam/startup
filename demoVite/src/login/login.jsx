@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../login/AuthContext';
 import './login.css';
 
@@ -6,11 +7,17 @@ export function Login() {
   const { login } = useAuth();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     // Perform login logic here
-    login(username, password); // Update the authentication state with username and password
+    const success = await login(username, password);
+    if (success) {
+      navigate('/rewards'); // Redirect to the Rewards page
+    } else {
+      alert('Login failed. Please check your credentials and try again.');
+    }
   };
 
   return (

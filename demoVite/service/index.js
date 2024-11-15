@@ -34,16 +34,14 @@ apiRouter.post('/auth/create', async (req, res) => {
 
 // GetAuth login an existing user
 apiRouter.post('/auth/login', async (req, res) => {
-  const user = users[req.body.email];
-  if (user) {
-    if (req.body.password === user.password) {
+    const user = users[req.body.email];
+    if (user && req.body.password === user.password) {
       user.token = uuid.v4();
       res.send({ token: user.token });
-      return;
+    } else {
+      res.status(401).send({ msg: 'Unauthorized' });
     }
-  }
-  res.status(401).send({ msg: 'Unauthorized' });
-});
+  });
 
 // DeleteAuth logout a user
 apiRouter.delete('/auth/logout', (req, res) => {
@@ -95,3 +93,14 @@ function updateScores(newScore, scores) {
 
   return scores;
 }
+
+
+// Get user details for testing purposes
+apiRouter.get('/auth/user/:email', (req, res) => {
+    const user = users[req.params.email];
+    if (user) {
+        res.send(user);
+    } else {
+        res.status(404).send({ msg: 'User not found' });
+    }
+});
