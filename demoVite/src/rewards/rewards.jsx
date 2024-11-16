@@ -14,8 +14,8 @@ export function Rewards() {
                         <p>Here are your rewards...</p>
                         {<main className="container">
                             <section className="rewards-section">
-                                <h2>User 123 : Points</h2>
-                                <p>You have <span id="points">0</span> points.</p>
+                                <h2>Your Rewards</h2>
+                                <p>You have <span id="points">50</span> points.</p>
                             </section>
 
                             <section className="weekly-offers">

@@ -4,7 +4,7 @@ import { useAuth } from '../login/AuthContext';
 import './login.css';
 
 export function Login() {
-  const { login } = useAuth();
+  const { login, logout } = useAuth();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -20,11 +20,16 @@ export function Login() {
     }
   };
 
+  const handleLogout = () => {
+    logout();
+    navigate('/'); // Redirect to the home page after logout
+  };
+
   return (
     <main className="container mt-5">
       <section>
         <form onSubmit={handleLogin} className="form-container">
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="username">Email:</label>
           <input 
             type="text" 
             className="form-control" 
@@ -48,6 +53,7 @@ export function Login() {
           <br />
           <input type="submit" className="btn btn-primary" value="Login" />
         </form>
+        <button onClick={handleLogout} className="btn btn-secondary mt-3">Logout</button>
       </section>
       <footer className="mt-4">
         <p>Don't have an account? <a href="register">Register here</a></p>

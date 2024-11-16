@@ -64,3 +64,20 @@ a:hover {
   max-width: 100%;
   height: auto;
 }
+
+.container-fluid {
+  padding: 10px;
+}
+
+.picture-box {
+  padding-top: 10px;
+  margin: 20px auto;
+  max-width: 600px;
+  max-height: 600px;
+  overflow: hidden;
+}
+
+.img-fluid {
+  width: 100%;
+  height: auto;
+}

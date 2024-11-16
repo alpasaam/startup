@@ -21,12 +21,12 @@ app.use(`/api`, apiRouter);
 
 // CreateAuth a new user
 apiRouter.post('/auth/create', async (req, res) => {
-  const user = users[req.body.email];
+  const user = users[req.body.username];
   if (user) {
     res.status(409).send({ msg: 'Existing user' });
   } else {
-    const user = { email: req.body.email, password: req.body.password, token: uuid.v4() };
-    users[user.email] = user;
+    const user = { username: req.body.username, email: req.body.email, password: req.body.password, token: uuid.v4() };
+    users[user.username] = user;
 
     res.send({ token: user.token });
   }
@@ -34,7 +34,7 @@ apiRouter.post('/auth/create', async (req, res) => {
 
 // GetAuth login an existing user
 apiRouter.post('/auth/login', async (req, res) => {
-    const user = users[req.body.email];
+    const user = users[req.body.username];
     if (user && req.body.password === user.password) {
       user.token = uuid.v4();
       res.send({ token: user.token });
@@ -96,8 +96,8 @@ function updateScores(newScore, scores) {
 
 
 // Get user details for testing purposes
-apiRouter.get('/auth/user/:email', (req, res) => {
-    const user = users[req.params.email];
+apiRouter.get('/auth/user/:username', (req, res) => {
+    const user = users[req.params.username];
     if (user) {
         res.send(user);
     } else {
