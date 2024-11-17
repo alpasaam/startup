@@ -1,8 +1,10 @@
 import React from 'react';
+import { usePoints } from '../rewards/PointsContext';
 import '../app.css'
 
 export function Home() {
   const [imageUrl, setImageUrl] = React.useState('data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=');
+  const { addPoints } = usePoints();
 
   // We only want this to render the first time the component is created and so we provide an empty dependency list.
   React.useEffect(() => {
@@ -25,6 +27,10 @@ export function Home() {
         console.error('Error fetching image:', error);
       });
   }, []);
+
+  const handleAddPoints = () => {
+    addPoints(10);
+  };
 
   return (
     <main className='container-fluid bg-secondary text-center'>
@@ -52,7 +58,7 @@ export function Home() {
     
         <div id="leave-review" className="text-center fs-5">
             <h3>Leave a Review</h3>
-            <form action="/submit-review" method="post" className="d-inline-block text-start">
+            <div className="d-inline-block text-start">
                 <div className="mb-3">
                     <label htmlFor="name" className="form-label">Name:</label>
                     <input type="text" id="name" name="name" className="form-control" required />
@@ -61,8 +67,8 @@ export function Home() {
                     <label htmlFor="review" className="form-label">Review:</label>
                     <textarea id="review" name="review" rows="4" className="form-control" required></textarea>
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
-            </form>
+                <button onClick = {handleAddPoints} type="submit" className="btn btn-primary">Submit</button>
+            </div>
         </div>
         </section>
 

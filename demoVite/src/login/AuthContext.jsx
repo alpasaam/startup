@@ -6,7 +6,7 @@ const AuthContext = createContext();
 // Create a provider component
 export function AuthProvider({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [users, setUsers] = useState({});
+  const [user, setUser] = useState(null);
 
   const login = async (username, password) => {
     const response = await fetch('/api/auth/login', {
@@ -20,27 +20,8 @@ export function AuthProvider({ children }) {
     if (response.ok) {
       const data = await response.json();
       setIsLoggedIn(true);
-      return true;
-    } else {
-      return false;
-    }
-  };
-
-  const register = async (username, password, email) => {
-    const response = await fetch('/api/auth/create', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ username, password, email }),
-    });
-
-    if (response.ok) {
-      const data = await response.json();
-      setUsers((prevUsers) => ({
-        ...prevUsers,
-        [email]: { username, password, token: data.token },
-      }));
+      setUser({ username, email: username });
+      localStorage.setItem('userName', username);
       return true;
     } else {
       return false;
@@ -48,11 +29,21 @@ export function AuthProvider({ children }) {
   };
 
   const logout = () => {
-    setIsLoggedIn(false);
+    fetch(`/api/auth/logout`, {
+      method: 'delete',
+    })
+      .catch(() => {
+        // Logout failed. Assuming offline
+      })
+      .finally(() => {
+        localStorage.removeItem('userName');
+        setIsLoggedIn(false);
+        setUser(null);
+      });
   };
 
   return (
-    <AuthContext.Provider value={{ isLoggedIn, login, register, logout }}>
+    <AuthContext.Provider value={{ isLoggedIn, user, login, logout }}>
       {children}
     </AuthContext.Provider>
   );
