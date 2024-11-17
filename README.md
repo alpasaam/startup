@@ -65,6 +65,16 @@ For this deliverable we used JavaScript and React so that the application comple
 - [x] **Router** - Routing between home, menu, login and register components.
 - [x] **Hooks** - We used AuthContext to show the contents of the rewards page when one is logged in.
 
+## Service deliverable
+
+For this deliverable we added backend endpoints that receives user information and returns the email and reward points.
+
+- [x] **Node.js/Express HTTP service** - done!
+- [x] **Static middleware for frontend** - done!
+- [X] **Calls to third party endpoints** - we have a rotating themed chinese/food pictures from picsum.photos.
+- [x] **Backend service endpoints** - Placeholders for login that stores the current user on the server. Endpoints for reward points.
+- [x] **Frontend calls service endpoints** - I did this using the fetch function.
+
 
 ## Design :pencil2:
 ![Pictures of all four designs for the different pages](image.png)
