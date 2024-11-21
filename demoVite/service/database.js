@@ -44,10 +44,10 @@ async function addPoints(points) {
   return rewardPointsCollection.insertOne(points);
 }
 
-function getHighScores() {
-  const query = { score: { $gt: 0, $lt: 900 } };
+function getRewardPoints() {
+  const query = { point: { $gt: 0, $lt: 900 } };
   const options = {
-    sort: { score: -1 },
+    sort: { point: -1 },
     limit: 10,
   };
   const cursor = rewardPointsCollection.find(query, options);
@@ -58,6 +58,6 @@ module.exports = {
   getUser,
   getUserByToken,
   createUser,
-  addScore,
-  getHighScores,
+  addPoints,
+  getRewardPoints,
 };
