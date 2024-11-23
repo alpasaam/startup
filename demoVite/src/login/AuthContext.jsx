@@ -8,22 +8,24 @@ export function AuthProvider({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
 
-  const login = async (username, password) => {
+  const login = async (email, password) => {
     const response = await fetch('/api/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ email: username, password }),
+      body: JSON.stringify({ email: email, password: password }),
     });
 
     if (response.ok) {
       const data = await response.json();
       setIsLoggedIn(true);
-      setUser({ username, email: username });
-      localStorage.setItem('userName', username);
+      setUser({email: email});
+      localStorage.setItem('email', email);
       return true;
     } else {
+      const body = await response.json();
+      console.log(`⚠ Error: ${body.msg}`);
       return false;
     }
   };
@@ -36,7 +38,7 @@ export function AuthProvider({ children }) {
         // Logout failed. Assuming offline
       })
       .finally(() => {
-        localStorage.removeItem('userName');
+        localStorage.removeItem('email');
         setIsLoggedIn(false);
         setUser(null);
       });

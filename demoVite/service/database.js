@@ -4,10 +4,9 @@ const uuid = require('uuid');
 const config = require('./dbConfig.json');
 
 const url = `mongodb+srv://${config.userName}:${config.password}@${config.hostname}`;
-const client = new MongoClient(url);
+const client = new MongoClient(url, { tls: true, serverSelectionTimeoutMS: 3000, autoSelectFamily: false, });
 const db = client.db('brothershotpotorem');
 const userCollection = db.collection('user');
-const rewardPointsCollection = db.collection('rewardpoints');
 
 // This will asynchronously test the connection and exit the process if it fails
 (async function testConnection() {
@@ -40,18 +39,24 @@ async function createUser(email, password) {
   return user;
 }
 
-async function addPoints(points) {
-  return rewardPointsCollection.insertOne(points);
+async function addPoints(email, points) {
+  await userCollection.updateOne(
+    { email },
+    { $inc: { points } },
+    { upsert: true } // This option creates a new document if no matching document is found
+  );
 }
 
-function getRewardPoints() {
-  const query = { point: { $gt: 0, $lt: 900 } };
-  const options = {
-    sort: { point: -1 },
-    limit: 10,
-  };
-  const cursor = rewardPointsCollection.find(query, options);
-  return cursor.toArray();
+async function updateUserToken(email, token) {
+  await userCollection.updateOne(
+    { email },
+    { $set: { token } }
+  );
+}
+
+async function getRewardPoints(email) {
+  const user = await getUser(email);
+  return user ? user.points : null;
 }
 
 module.exports = {
@@ -60,4 +65,5 @@ module.exports = {
   createUser,
   addPoints,
   getRewardPoints,
+  updateUserToken,
 };

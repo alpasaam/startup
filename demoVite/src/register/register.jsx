@@ -3,9 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import './register.css';
 
 export function Register() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {
@@ -16,7 +15,7 @@ export function Register() {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ username, password, email }),
+      body: JSON.stringify({ email, password }),
     });
 
     if (response.ok) {
@@ -36,14 +35,14 @@ export function Register() {
     <main className="container mt-5">
       <section>
         <form onSubmit={handleRegister} className="form-container">
-          <label htmlFor="username">Username:</label>
+        <label htmlFor="email">Email:</label>
           <input 
-            type="text" 
+            type="email" 
             className="form-control" 
-            id="username" 
-            name="username" 
-            value={username} 
-            onChange={(e) => setUsername(e.target.value)} 
+            id="email" 
+            name="email" 
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)} 
             required 
           />
           <br />
@@ -58,17 +57,7 @@ export function Register() {
             required 
           />
           <br />
-          <label htmlFor="email">Email:</label>
-          <input 
-            type="email" 
-            className="form-control" 
-            id="email" 
-            name="email" 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)} 
-            required 
-          />
-          <br />
+          
           <input type="submit" className="btn btn-primary" value="Register" />
         </form>
       </section>

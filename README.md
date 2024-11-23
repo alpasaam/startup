@@ -38,7 +38,7 @@ For this deliverable we built out the structure of my application using HTML.
 - [x] **Links** - The login page links to the register page. Every page links to every other page. 
 - [x] **Text** - Reviews are displayed on the home page. 
 - [x] **Images** - Included images for the menu and home page.
-- [x] **DB/Login** - Input box and submit button for login. The username and password date will be pulled from a database
+- [x] **DB/Login** - Input box and submit button for login. The email and password date will be pulled from a database
 - [x] **WebSocket** - The amount of points each user has will be pulled from a Websocket. 
 
 

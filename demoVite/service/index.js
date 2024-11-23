@@ -9,10 +9,6 @@ const DB = require('./database.js');
 
 const authCookieName = 'token';
 
-// The users and reward points are saved in memory and disappear whenever the service is restarted.
-let users = {};
-let rewardPoints = {};
-
 // The service port. In production the front-end code is statically hosted by the service on the same port.
 const port = process.argv.length > 2 ? process.argv[2] : 4000;
 
@@ -50,8 +46,8 @@ const secureApiRouter = express.Router();
 apiRouter.use(secureApiRouter);
 
 secureApiRouter.get('/rewardpoints', async (req, res) => {
-  const points = await DB.getRewardPoints();
-  res.send(points);
+  const points = await DB.getRewardPoints(req.query.email);
+  res.send({ points });
 });
 
 apiRouter.get('/users', (req, res) => {
@@ -61,52 +57,42 @@ apiRouter.get('/users', (req, res) => {
 // Get user details by token
 apiRouter.post('/auth/login', async (req, res) => {
   const user = await DB.getUser(req.body.email);
+  console.log(user);
   if (user) {
     if (await bcrypt.compare(req.body.password, user.password)) {
-      setAuthCookie(res, user.token);
+      setAuthCookie(res, user.token); // Set the new token in the cookies
       res.send({ id: user._id });
       return;
     }
   }
-  res.status(401).send({ msg: 'Unauthorized' });
-});
-
-// GetAuth login an existing user
-apiRouter.post('/auth/login', async (req, res) => {
-  const user = users[req.body.email];
-  if (user) {
-    if (req.body.password === user.password) {
-      user.token = uuid.v4();
-      res.send({ token: user.token });
-      return;
-    }
-  }
-  res.status(401).send({ msg: 'Unauthorized' });
+  res.status(401).send({ msg: 'Unauthorized User' });
 });
 
 // DeleteAuth logout a user
-apiRouter.delete('/auth/logout', (_req, res) => {
+apiRouter.delete('/auth/logout', (req, res) => {
+  console.log(req.cookies[authCookieName]);
   res.clearCookie(authCookieName);
   res.status(204).end();
 });
 
-
-
 secureApiRouter.use(async (req, res, next) => {
+  const user1 = await DB.getUser(req.body.email);
   const authToken = req.cookies[authCookieName];
+  console.log("The auth token is" , authToken);
   const user = await DB.getUserByToken(authToken);
+  console.log("The user is " , user);
   if (user) {
     next();
   } else {
-    res.status(401).send({ msg: 'Unauthorized' });
+    res.status(401).send({ msg: 'Unauthorized blah blah' });
   }
 });
 
 // GetRewardPoints
-apiRouter.get('/reward-points/:email', (req, res) => {
+secureApiRouter.get('/reward-points/:email', async (req, res) => {
   const email = req.params.email;
-  const points = rewardPoints[email];
-  if (points !== undefined) {
+  const points = await DB.getRewardPoints(email);
+  if (points !== null) {
     res.send({ points });
   } else {
     res.status(404).send({ msg: 'User not found' });
@@ -115,10 +101,10 @@ apiRouter.get('/reward-points/:email', (req, res) => {
 
 // AddRewardPoints
 secureApiRouter.post('/reward-points', async (req, res) => {
-  const point = { ...req.body, ip: req.ip };
-  await DB.addPoints(point);
-  const points = await DB.getRewardPoints();
-  res.send(points);
+  const { email, points } = req.body;
+  await DB.addPoints(email, points);
+  const updatedPoints = await DB.getRewardPoints(email);
+  res.send({ points: updatedPoints });
 });
 
 // Return the application's default page if the path is unknown
@@ -139,10 +125,9 @@ function setAuthCookie(res, authToken) {
 }
 
 // Create HTTPS server
-app.listen(port, () => {
+const httpService = app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
-
 
 // Endpoint to handle form submission
 app.post('/submit-review', (req, res) => {

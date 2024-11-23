@@ -5,14 +5,16 @@ import './login.css';
 
 export function Login() {
   const { login, logout } = useAuth();
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     // Perform login logic here
-    const success = await login(username, password);
+    console.log('Logging in with', email)
+    console.log('Logging in with', password)
+    const success = await login(email, password);
     if (success) {
       navigate('/rewards'); // Redirect to the Rewards page
     } else {
@@ -29,14 +31,14 @@ export function Login() {
     <main className="container mt-5">
       <section>
         <form onSubmit={handleLogin} className="form-container">
-          <label htmlFor="username">Email:</label>
+          <label htmlFor="email">Email:</label>
           <input 
             type="text" 
             className="form-control" 
-            id="username" 
-            name="username" 
-            value={username} 
-            onChange={(e) => setUsername(e.target.value)} 
+            id="email" 
+            name="email" 
+            value={email} 
+            onChange={(e) => setEmail(e.target.value)} 
             required 
           />
           <br />
