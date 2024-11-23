@@ -76,15 +76,12 @@ apiRouter.delete('/auth/logout', (req, res) => {
 });
 
 secureApiRouter.use(async (req, res, next) => {
-  const user1 = await DB.getUser(req.body.email);
   const authToken = req.cookies[authCookieName];
-  console.log("The auth token is" , authToken);
   const user = await DB.getUserByToken(authToken);
-  console.log("The user is " , user);
   if (user) {
     next();
   } else {
-    res.status(401).send({ msg: 'Unauthorized blah blah' });
+    res.status(401).send({ msg: 'Unauthorized (didn\'t find the token)' });
   }
 });
 
