@@ -64,7 +64,18 @@ For this deliverable we used JavaScript and React so that the application comple
   - [x] **WebSocket** - We have a section that displays the google maps on the home page.
 - [x] **Router** - Routing between home, menu, login and register components.
 - [x] **Hooks** - We used AuthContext to show the contents of the rewards page when one is logged in.
+- [ ] 
 
+## DB/Login deliverable
+
+For this deliverable we associate the rewards with the logged in user. I stored the points in the database.
+
+- [x] **MongoDB Atlas database created** - done!
+- [x] **Stores data in MongoDB** - done!
+- [x] **User registration** - Creates a new account in the database.
+- [x] **existing user** - Stores the votes under the same user if the user already exists.
+- [x] **Use MongoDB to store credentials** - Stores both user and their votes.
+- [X] **Restricts functionality** - You cannot see the contents of the rewards page until you have logged in.
 
 ## Design :pencil2:
 ![Pictures of all four designs for the different pages](image.png)
