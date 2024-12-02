@@ -64,7 +64,17 @@ For this deliverable we used JavaScript and React so that the application comple
   - [x] **WebSocket** - We have a section that displays the google maps on the home page.
 - [x] **Router** - Routing between home, menu, login and register components.
 - [x] **Hooks** - We used AuthContext to show the contents of the rewards page when one is logged in.
-- [ ] 
+
+
+## Service deliverable
+
+For this deliverable we added backend endpoints that receives points and returns the points totals.
+
+- [x] **Node.js/Express HTTP service** - done!
+- [x] **Static middleware for frontend** - done!
+- [X] **Calls to third party endpoints** - used this to get img on main page 😔
+- [x] **Backend service endpoints** - Placeholders for login that stores the current user on the server. Endpoints for rewards.
+- [x] **Frontend calls service endpoints** - I did this using the fetch function.
 
 ## DB/Login deliverable
 
