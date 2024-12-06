@@ -42,13 +42,6 @@ apiRouter.post('/auth/create', async (req, res) => {
   }
 });
 
-const secureApiRouter = express.Router();
-apiRouter.use(secureApiRouter);
-
-secureApiRouter.get('/rewardpoints', async (req, res) => {
-  const points = await DB.getRewardPoints(req.query.email);
-  res.send({ points });
-});
 
 apiRouter.get('/users', (req, res) => {
   res.send(Object.values(users));
@@ -70,10 +63,12 @@ apiRouter.post('/auth/login', async (req, res) => {
 
 // DeleteAuth logout a user
 apiRouter.delete('/auth/logout', (req, res) => {
-  console.log(req.cookies[authCookieName]);
   res.clearCookie(authCookieName);
   res.status(204).end();
 });
+
+const secureApiRouter = express.Router();
+apiRouter.use(secureApiRouter);
 
 secureApiRouter.use(async (req, res, next) => {
   const authToken = req.cookies[authCookieName];
@@ -102,6 +97,11 @@ secureApiRouter.post('/reward-points', async (req, res) => {
   await DB.addPoints(email, points);
   const updatedPoints = await DB.getRewardPoints(email);
   res.send({ points: updatedPoints });
+});
+
+secureApiRouter.get('/rewardpoints', async (req, res) => {
+  const points = await DB.getRewardPoints(req.query.email);
+  res.send({ points });
 });
 
 // Return the application's default page if the path is unknown
