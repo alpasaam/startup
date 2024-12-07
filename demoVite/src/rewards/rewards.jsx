@@ -7,7 +7,6 @@ export function Rewards() {
   const { isLoggedIn, user } = useAuth();
   const { points } = usePoints();
 
-
   return (
     <main className="container mt-5">
       <section>
@@ -18,7 +17,8 @@ export function Rewards() {
             <div className="container">
               <section className="rewards-section">
                 Welcome, {user.email}!
-                <p>You have <span id="points">{user.points}</span> points.</p>
+                <p>You have <span id="points">{points}</span> points.</p>
+                
               </section>
 
               <section className="weekly-offers">

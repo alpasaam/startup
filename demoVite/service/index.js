@@ -6,6 +6,7 @@ const express = require('express');
 const uuid = require('uuid');
 const app = express();
 const DB = require('./database.js');
+const { peerProxy } = require('./peerProxy.js');
 
 const authCookieName = 'token';
 
@@ -133,3 +134,5 @@ app.post('/submit-review', (req, res) => {
   console.log(`Received review from ${name}: ${review}`);
   res.send('Review submitted successfully');
 });
+
+peerProxy(httpService);
