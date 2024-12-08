@@ -39,7 +39,14 @@ export function Home() {
   }, []);
 
   function handleReviewEvent(event) {
-    setEvents([event]); // Reset the events state with only the new event
+    setEvents((prevEvents) => {
+      // Check if the event already exists in the events array
+      const eventExists = prevEvents.some((e) => e.from === event.from && e.value.review === event.value.review);
+      if (!eventExists) {
+        return [...prevEvents, event];
+      }
+      return prevEvents;
+    });
   }
 
   const handleSubmitReview = (e) => {
@@ -62,10 +69,9 @@ export function Home() {
         review = event.value.review;
       }
 
-    
       reviewArray.push(
         <div key={i} className='event'>
-          <span className={'review-event'}>{event.from.split('@')[0]}</span>
+          <span className={'review-event'}>{event.from.split('@')[0]} - </span>
           {review}
         </div>
       );

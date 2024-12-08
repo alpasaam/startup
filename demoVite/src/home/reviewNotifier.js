@@ -2,7 +2,11 @@ class ReviewEventNotifier {
   constructor() {
     this.handlers = [];
     this.events = [];
-    this.socket = new WebSocket('ws://localhost:8080'); // Adjust the WebSocket URL as needed
+    this.socket = new WebSocket('ws://localhost:4000');
+
+    this.socket.onopen = () => {
+        console.log('WebSocket connection established');
+      };
 
     this.socket.onmessage = (message) => {
       const event = JSON.parse(message.data);
