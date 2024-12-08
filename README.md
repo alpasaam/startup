@@ -76,5 +76,15 @@ For this deliverable we added backend endpoints that receives user information a
 - [x] **Frontend calls service endpoints** - I did this using the fetch function.
 
 
+## WebSocket deliverable
+
+For this deliverable we used webSocket to update the votes on the frontend in realtime.
+
+- [x] **Backend listens for WebSocket connection** - done!
+- [x] **Frontend makes WebSocket connection** - done!
+- [x] **Data sent over WebSocket connection** - done!
+- [ ] **WebSocket data displayed** - The reviews do display. but not across all clients.
+
+
 ## Design :pencil2:
 ![Pictures of all four designs for the different pages](image.png)

@@ -2,7 +2,9 @@ class ReviewEventNotifier {
   constructor() {
     this.handlers = [];
     this.events = [];
-    this.socket = new WebSocket('ws://localhost:4000');
+    let port = window.location.port;
+    const protocol = window.location.protocol === 'http:' ? 'ws' : 'wss';
+    this.socket = new WebSocket(`${protocol}://${window.location.hostname}:${port}/ws`);
 
     this.socket.onopen = () => {
         console.log('WebSocket connection established');
@@ -15,6 +17,7 @@ class ReviewEventNotifier {
   }
 
   broadcastEvent(from, type, value) {
+    console.log('Broadcasting event:', from, type, value);
     const event = new EventMessage(from, type, value);
     this.socket.send(JSON.stringify(event));
     this.receiveEvent(event); // Update the array locally as well
