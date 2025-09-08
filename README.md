@@ -63,4 +63,4 @@ notes.md        # Development notes and progress logs
 
 ![Pictures of all four designs for the different pages](image.png)
 
-> See [`notes.md`](notes.md) for development documentation and iteration details.
+> See [`README.md`](README.md) for development documentation and iteration details.
