@@ -1,39 +1,66 @@
-# Restaurant Website
+# Brothers HotPot Website
 
 ## Overview
 
-A responsive website built for a local restaurant. Though no longer live, the repository demonstrates web design and development skills in building a complete, branded site that included menu presentation, contact information, and location details.
+A responsive web application built as part of BYU CS 260. The project simulates a restaurant site for **Brothers HotPot**, an authentic Chinese buffet concept. It demonstrates full-stack development with features like menu browsing, rewards tracking, authentication, and interactive media.
 
-## Highlights
+## Elevator Pitch
 
-* **Responsive design:** Optimized for desktop and mobile
-* **Menu showcase:** Styled sections for food and drinks
-* **Location/contact:** Clear call-to-action for visiting or ordering
-* **Custom branding:** Colors, typography, and layout aligned with restaurant identity
+This website allows users to:
 
-## Tech Stack
+* Browse delicious menu items with images and prices
+* Join a rewards program to save money on dining
+* Find the restaurant via interactive maps
+* View and leave reviews
+* Explore an immersive photo and video gallery
 
-* **Frontend:** HTML, CSS, JavaScript
-* **Frameworks/Libraries:** \[specify if React, Bootstrap, Tailwind, etc. used]
+## Key Features
+
+* Display menu with embedded photos and prices
+* Interactive map with directions to the restaurant
+* 360° interactive panorama
+* Secure login over HTTPS
+* Embedded Google reviews
+* Interactive photo/video gallery
+* Admin panel for editing food items, prices & pictures
+* Rewards program with persistent user points
+
+## Technologies
+
+* **Frontend:** HTML, CSS, JavaScript, React
+* **Backend:** Node.js + Express
+* **Database:** MongoDB Atlas
+* **Realtime:** WebSocket for live updates
+* **Third-party services:** Google Maps, Google Reviews
 
 ## Project Structure
 
 ```
 index.html      # Main landing page
-styles/         # CSS stylesheets
-scripts/        # JavaScript functionality
-assets/         # Images and media (logo, food photos)
+public/         # Static assets
+src/            # React components and routing
+server/         # Express backend services
+notes.md        # Development notes and progress logs
 ```
 
-## Features
+## Implementation Highlights
 
-* Interactive navigation and layout
-* Menu and promotions displayed in a clean design
-* Mobile-friendly user experience
-* Lightweight for fast load times
+* **Authentication:** Secure login system with user registration
+* **Database:** Stores user credentials, menu items, and reward points in MongoDB
+* **Service Endpoints:** Backend routes for login and rewards system
+* **Frontend Integration:** Fetch API connects frontend to backend services
+* **Responsive Styling:** Traditional Chinese cultural design applied with CSS
 
-## Architecture
+## Deliverables (BYU CS 260)
 
-* **Static site** with assets and styling organized for scalability
+* **HTML deliverable:** Complete page structure, links, images, and placeholders for login/reviews
+* **CSS deliverable:** Styled header, footer, navigation, and responsive layout
+* **React deliverable:** Components for login, menu, and rewards; React Router for navigation; hooks for auth state
+* **Service deliverable:** Node.js/Express server with API endpoints and integration of third-party services
+* **DB/Login deliverable:** User registration and rewards points stored in MongoDB; restricted access to rewards page
 
-> Tip: Add a screenshot of the homepage at the top so recruiters/devs can immediately see the design.
+## Design
+
+![Pictures of all four designs for the different pages](image.png)
+
+> See [`notes.md`](notes.md) for development documentation and iteration details.
